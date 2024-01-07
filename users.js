@@ -6,6 +6,7 @@ const saltRounds = 10; // Antal saltvarv för att öka säkerheten
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 
+require('dotenv').config();
 
 
 
@@ -99,8 +100,8 @@ function generateResetToken() {
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: EMAIL,
-    pass: EMAIL_PASSWORD
+    user: process.env.EMAIL,
+    pass: process.env.EMAIL_PASSWORD
   }
 });
 
