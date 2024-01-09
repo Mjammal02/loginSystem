@@ -1,9 +1,9 @@
-const express = require('express');
-const cors = require('cors');
+const express = require('express'); //verkty
+const cors = require('cors'); //säkerhetsvertyg
 const app = express();
 const port = 5000;
 
-app.use(cors());
+app.use(cors()); //Säkerhetssystemet tillåter kommunikation till servern
 app.use(express.json());
 
 const usersRoutes = require('./users');
